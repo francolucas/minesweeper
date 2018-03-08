@@ -11,11 +11,15 @@ const StyledGrid = styled.div`
   left: 50%;
   width: 70vh;
   height: 70vh;
+  max-width: 90vw;
   background-color: #d1d8e0;
   transform: translateX(-50%);
+  border: solid 1px #d1d8e0;
   display: grid;
-  grid-template-columns: repeat(9, 11.11% 0);
-  grid-template-rows: repeat(9, 11.11% 0);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
 `
 
 const Item = styled.span`
@@ -28,6 +32,28 @@ const Item = styled.span`
 const Grid = () => (
   <StyledSection>
     <StyledGrid>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
+      <Item>1</Item>
       <Item>1</Item>
     </StyledGrid>
   </StyledSection>
