@@ -12,14 +12,13 @@ const StyledGrid = styled.div`
   width: 70vh;
   height: 70vh;
   max-width: 90vw;
+  max-height: 90vw;
   background-color: #d1d8e0;
   transform: translateX(-50%);
-  border: solid 1px #d1d8e0;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(9, 1fr);
-  grid-column-gap: 1px;
-  grid-row-gap: 1px;
+  grid-template: repeat(9, calc(100% / 9 - 1px)) / repeat(9, calc(100% / 9 - 1px));
+  grid-gap: 1px;
+  padding: 1px 0 0 1px;
 `
 
 const Item = styled.span`
@@ -27,34 +26,20 @@ const Item = styled.span`
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  font-size: 4vh;
 `
+
+const arr = []
+for (let i = 0; i < 81; i++) {
+  arr.push(1)
+}
 
 const Grid = () => (
   <StyledSection>
     <StyledGrid>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
-      <Item>1</Item>
+      {
+        arr.map(v => <Item>{v}</Item>)
+      }
     </StyledGrid>
   </StyledSection>
 )
