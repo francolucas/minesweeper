@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Item from './Item'
+
 const StyledSection = styled.section`
   position: relative;
   padding-top: 50px;
@@ -21,24 +23,16 @@ const StyledGrid = styled.div`
   padding: 1px 0 0 1px;
 `
 
-const Item = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  font-size: 4vh;
-`
-
 const arr = []
 for (let i = 0; i < 81; i++) {
-  arr.push(1)
+  arr.push(i + 1)
 }
 
 const Grid = () => (
   <StyledSection>
     <StyledGrid>
       {
-        arr.map(v => <Item>{v}</Item>)
+        arr.map(v => <Item key={v} value={v} />)
       }
     </StyledGrid>
   </StyledSection>
