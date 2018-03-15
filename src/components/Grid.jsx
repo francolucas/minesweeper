@@ -35,6 +35,10 @@ class Grid extends Component {
   }
 
   handleClick = (index) => {
+    if (this.state.indexes[index] === true) {
+      return false;
+    }
+
     const position = [Math.floor(index / 9), Math.round(index % 9)]
     const around = [
       [position[0] - 1, position[1]],
@@ -52,8 +56,9 @@ class Grid extends Component {
     )
 
     const indexes = this.state.indexes.map((value, index) =>
-      around.indexOf(index) >= 0 ? value + 1 : value
+      value !== true && around.indexOf(index) >= 0 ? value + 1 : value
     )
+    indexes[index] = true
 
     this.setState({ indexes })
   }
