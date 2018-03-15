@@ -20,34 +20,12 @@ const StyledItem = styled.span`
 `
 
 class Item extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      currentIndex: [Math.floor(props.index / 9), Math.round(props.index % 9)]
-    }
-  }
-  handleClick = () => {
-    const { currentIndex } = this.state
-    const around = [
-      [currentIndex[0] - 1, currentIndex[1]],
-      [currentIndex[0] - 1, currentIndex[1] + 1],
-      [currentIndex[0], currentIndex[1] + 1],
-      [currentIndex[0] + 1, currentIndex[1] + 1],
-      [currentIndex[0] + 1, currentIndex[1]],
-      [currentIndex[0] + 1, currentIndex[1] - 1],
-      [currentIndex[0], currentIndex[1] - 1],
-      [currentIndex[0] - 1, currentIndex[1] - 1],
-    ].filter(index =>
-      index[0] >= 0 && index[0] < 9 && index[1] >= 0 && index[1] < 9
-    )
-
-    // Update the around items
-  }
-
   render() {
+    console.log('renderizei', this.props.index)
     return (
-      <StyledItem onClick={this.handleClick} data-title={this.props.index + 1} />
+      <StyledItem onClick={() => this.props.onClick(this.props.index)} data-title={this.props.index + 1}>
+        {this.props.value}
+      </StyledItem>
     )
   }
 }
