@@ -21,7 +21,6 @@ const StyledItem = styled.span`
 
 class Item extends Component {
   render() {
-    console.log('renderizei', this.props.index)
     return (
       <StyledItem onClick={() => this.props.onClick(this.props.index)} data-title={this.props.index + 1}>
         {this.props.value}
